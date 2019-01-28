@@ -5,9 +5,9 @@ public class FullDistance {
 
     Point p = new Point(3, 2);
 
-    System.out.println(length(p));
+    System.out.println(p.length());
   }
-  public static double length (Point p){
-    return p.x - p.y;
+//  public static double length (Point p){
+//    return p.x - p.y;
   }
-}
+

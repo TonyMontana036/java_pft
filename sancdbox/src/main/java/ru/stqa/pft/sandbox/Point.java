@@ -8,5 +8,8 @@ public class Point {
     this.x = x;
     this.y = y;
   }
+  public double length(){
+    return this.x - this.y;
+  }
 
 }
