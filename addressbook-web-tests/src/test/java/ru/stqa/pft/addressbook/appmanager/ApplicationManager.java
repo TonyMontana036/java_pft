@@ -12,20 +12,24 @@ import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
 
-  protected WebDriver driver;
+  WebDriver driver;
 
   private SessionHelper sessionHelper;
   private NavigationHelper navigationHelper;
   private GroupHelper groupHelper;
+  private String browser;
+
+  public ApplicationManager(String browser) {
+    this.browser = browser;
+  }
 
 
   public void init() {
-    String browser = BrowserType.FIREFOX;
-    if (browser == BrowserType.FIREFOX) {
+      if (browser.equals(BrowserType.FIREFOX)) {
       driver = new FirefoxDriver();
-    } else if (browser == BrowserType.CHROME){
+    } else if (browser.equals(BrowserType.CHROME)){
       driver = new ChromeDriver();
-    } else if (browser == BrowserType.IE) {
+    } else if (browser.equals(BrowserType.IE)) {
       driver = new InternetExplorerDriver();
     }
 
