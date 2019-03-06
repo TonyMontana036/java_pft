@@ -11,13 +11,13 @@ public class GroupModificationTests extends TestBase {
   @Test
   public void testGroupModification(){
     app.getNavigationHelper().gotoGroupPage();
-    List<GroupData> before = app.getGroupHelper().getGropList();
+    List<GroupData> before = app.getGroupHelper().getGroupList();
     app.getGroupHelper().selectGroup(before.size() - 1);
     app.getGroupHelper().initGroupModification();
     app.getGroupHelper().fillGroupForm(new GroupData("123", "456", "789"));
     app.getGroupHelper().submitGroupModification();
     app.getGroupHelper().returnToGroupPage();
-    List<GroupData> after = app.getGroupHelper().getGropList();
+    List<GroupData> after = app.getGroupHelper().getGroupList();
     Assert.assertEquals(after.size(), before.size());
   }
 }

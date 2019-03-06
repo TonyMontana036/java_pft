@@ -53,7 +53,7 @@ public class GroupHelper extends HelperBase {
     return driver.findElements(By.name("selected[]")).size();
   }
 
-  public List<GroupData> getGropList() {
+  public List<GroupData> getGroupList() {
     List<GroupData> groups = new ArrayList<GroupData>();
     List<WebElement> elements = driver.findElements(By.cssSelector("span.group"));
     for (WebElement element : elements){
