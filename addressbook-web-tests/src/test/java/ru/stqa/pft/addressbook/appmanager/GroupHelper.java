@@ -13,6 +13,27 @@ public class GroupHelper extends HelperBase {
     super(driver);
   }
 
+
+
+//  public boolean isThereAGroup(){
+//    return isElementPresent(By.name("selected[]"));
+//  }
+
+  public void createGroup (GroupData group){
+    initGroupCreation();
+    fillGroupForm(group);
+    submitGroupCreation();
+    returnToGroupPage();
+  }
+
+  public void modifyGroup(int index, GroupData group) {
+    selectGroup(index);
+    initGroupModification();
+    fillGroupForm(group);
+    submitGroupModification();
+    returnToGroupPage();
+  }
+
   public void returnToGroupPage() {
     click(By.linkText("groups"));
   }
@@ -38,7 +59,6 @@ public class GroupHelper extends HelperBase {
 
   public void selectGroup(int index) {
     driver.findElements(By.name("selected[]")).get(index).click();
-    //click(By.name("selected[]"));
   }
 
   public void initGroupModification() {
